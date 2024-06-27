@@ -1,0 +1,138 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <title>Home Page</title>
+    <style>
+body{
+    background-image: url('{% static "img/loginbg.jpg" %}');
+    background-position: fixed];
+    background-repeat: no-repeat;
+    background-size: cover;
+     
+  
+}
+
+form{
+  height: 250px;
+  width: 380px;
+  background-color: rgba(255,255,255,0.13);
+  position: absolute;
+  justify-center:center;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+}
+      
+      
+      label {
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        justify-center: center;
+        position: center
+        margin-bottom: 20px;
+        color: white;
+      }
+      
+      input[type="tel"] {
+        box-shadow: 5px 5px 5px #FFFFF;
+        position: center;
+        justify-center: center;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 300px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      input[type="tel"]:focus {
+        box-shadow: 15px 15px 15px #000000;
+        transform: translateY(-20px);
+      }
+
+      /* Add light-colored placeholder text */
+      input[type="tel"]::placeholder {
+      color: #D3D3D3;
+      font-size: px;
+      }
+
+      /* Center the label */
+      label {
+      display: block;
+      font-size: 22px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+      }
+
+      
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+      }
+      
+      input[type="submit"], .btn-primary {
+        font-size: 20px;
+        padding: 3px 40px;
+        border-radius: 10px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.9s;
+      }
+      
+      input[type="submit"]:hover, .btn-primary:hover {
+        transform: scale(1.1);
+      }
+      
+      .btn-primary {
+        background-color: #FF5733;
+      }
+      <form method="post" action="{% url 'Output' %}">
+        {% csrf_token %}
+        <label for="phone">Enter Search:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br><br>
+        <div class="buttons">
+          <input type="submit" value="Submit">
+          <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+        </div>
+      </form>
+      
+      
+    </style>
+  </head>
+  <body>
+    
+  </div id="content">
+    <form method="post" action="{% url 'Output' %}">
+      {% csrf_token %}
+      <label for="phone">WELCOME to dialer tracker</label>
+      <input type="tel" id="phone" name="phone" placeholder="+91XXXXXXXXXX" required>
+      <br><br>
+      <div class="buttons">
+        <input type="submit" value="Submit">
+        <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+      </div>
+    </form>
+    
+  </body>
+</html>
+
